@@ -3,7 +3,8 @@ KRATAK OPIS PROJEKTA
 
 Koriscene tehnologije : Java, SQL
 
-Projekat sadrzi:-Java Core and Data Structures, 
+Projekat sadrzi:
+                -Java Core and Data Structures, 
 
                 -Java Swing GUI,
                 
