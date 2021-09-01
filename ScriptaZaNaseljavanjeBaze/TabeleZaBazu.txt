@@ -1,0 +1,130 @@
+
+-- javabazeapp.logintable definition
+
+CREATE TABLE `logintable` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `rank` varchar(50) DEFAULT '-----',
+  PRIMARY KEY (`id`),
+  CONSTRAINT `logintable` FOREIGN KEY (`id`) REFERENCES `zaposlenitable` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- javabazeapp.poslovice definition
+
+CREATE TABLE `poslovice` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `poslovica` varchar(200) DEFAULT NULL,
+  `autor` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=251 DEFAULT CHARSET=utf8mb4;
+
+-- javabazeapp.students_table definition
+
+CREATE TABLE `students_table` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `subjects` varchar(50) DEFAULT NULL,
+  `profesor` varchar(50) DEFAULT NULL,
+  `finalGrade` varchar(50) DEFAULT 'Not graded',
+  `images` longblob DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
+
+-- javabazeapp.zaposlenitable definition
+
+CREATE TABLE `zaposlenitable` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `lastname` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL,
+  `subjects` varchar(50) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
+
+-- javabazeapp.view_studenti_table_c source
+
+create or replace
+algorithm = UNDEFINED view `view_studenti_table_c` as
+select
+    `students_table`.`id` as `id`,
+    `students_table`.`firstname` as `firstname`,
+    `students_table`.`lastname` as `lastname`,
+    `students_table`.`gender` as `gender`,
+    `students_table`.`address` as `address`,
+    `students_table`.`subjects` as `subjects`,
+    `students_table`.`profesor` as `profesor`,
+    `students_table`.`finalGrade` as `finalGrade`,
+    `students_table`.`images` as `images`
+from
+    `students_table`
+where
+    `students_table`.`subjects` = 'C';
+
+
+-- javabazeapp.view_studenti_table_cplusplus source
+
+create or replace
+algorithm = UNDEFINED view `view_studenti_table_cplusplus` as
+select
+    `students_table`.`id` as `id`,
+    `students_table`.`firstname` as `firstname`,
+    `students_table`.`lastname` as `lastname`,
+    `students_table`.`gender` as `gender`,
+    `students_table`.`address` as `address`,
+    `students_table`.`subjects` as `subjects`,
+    `students_table`.`profesor` as `profesor`,
+    `students_table`.`finalGrade` as `finalGrade`,
+    `students_table`.`images` as `images`
+from
+    `students_table`
+where
+    `students_table`.`subjects` = 'C++';
+
+-- javabazeapp.view_studenti_table_java source
+
+create or replace
+algorithm = UNDEFINED view `view_studenti_table_java` as
+select
+    `students_table`.`id` as `id`,
+    `students_table`.`firstname` as `firstname`,
+    `students_table`.`lastname` as `lastname`,
+    `students_table`.`gender` as `gender`,
+    `students_table`.`address` as `address`,
+    `students_table`.`subjects` as `subjects`,
+    `students_table`.`profesor` as `profesor`,
+    `students_table`.`finalGrade` as `finalGrade`,
+    `students_table`.`images` as `images`
+from
+    `students_table`
+where
+    `students_table`.`subjects` = 'JAVA';
+
+-- javabazeapp.view_studenti_table_python source
+
+create or replace
+algorithm = UNDEFINED view `view_studenti_table_python` as
+select
+    `students_table`.`id` as `id`,
+    `students_table`.`firstname` as `firstname`,
+    `students_table`.`lastname` as `lastname`,
+    `students_table`.`gender` as `gender`,
+    `students_table`.`address` as `address`,
+    `students_table`.`subjects` as `subjects`,
+    `students_table`.`profesor` as `profesor`,
+    `students_table`.`finalGrade` as `finalGrade`,
+    `students_table`.`images` as `images`
+from
+    `students_table`
+where
+    `students_table`.`subjects` = 'Python';
+
+
+
