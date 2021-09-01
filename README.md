@@ -1,0 +1,2 @@
+# MojProjekatZaComtradeFocusAcademy
+opis
