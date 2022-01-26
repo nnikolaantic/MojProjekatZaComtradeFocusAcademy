@@ -340,6 +340,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="searchdata">
           <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchdataActionPerformed"/>
             <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="searchdataKeyReleased"/>
           </Events>
         </Component>

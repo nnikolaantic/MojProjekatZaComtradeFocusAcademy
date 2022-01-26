@@ -316,14 +316,14 @@ public class EmpCEOManageEmployees extends javax.swing.JFrame {
                 case "MANAGER":
                      jComboModifikatorPristupa.setSelectedIndex(1);
                      break;
-                case "TeamLeader":
-                     jComboModifikatorPristupa.setSelectedIndex(2);
-                     break;     
+//                case "TeamLeader":
+//                     jComboModifikatorPristupa.setSelectedIndex(2);
+//                     break;     
                 case "Employee":
-                     jComboModifikatorPristupa.setSelectedIndex(3);
+                     jComboModifikatorPristupa.setSelectedIndex(2);
                      break;
                 case "-----":
-                     jComboModifikatorPristupa.setSelectedIndex(4);
+                     jComboModifikatorPristupa.setSelectedIndex(3);
                      break;        
             }
                                  

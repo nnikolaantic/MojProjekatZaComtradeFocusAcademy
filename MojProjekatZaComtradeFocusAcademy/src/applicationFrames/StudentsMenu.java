@@ -465,7 +465,7 @@ public class StudentsMenu extends javax.swing.JFrame {
         try {
             Socket s = new Socket("localhost",2089);
 
-            DataInputStream din = new DataInputStream(s.getInputStream());
+//            DataInputStream din = new DataInputStream(s.getInputStream());
             DataOutputStream dout = new DataOutputStream(s.getOutputStream());
             dout.writeUTF(username);
 

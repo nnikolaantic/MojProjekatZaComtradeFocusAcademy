@@ -276,12 +276,12 @@ public class EmpSingUp extends javax.swing.JFrame {
             return;
         }    
         if(txtCreatePassword.getText().toString().length() > 6 && !proveraUser()){
-        if(proveraUser()){
-            return;
-        }
-        if(!proveraAcc()){
-            return;
-        }
+//        if(proveraUser()){
+//            return;
+//        }
+//        if(!proveraAcc()){
+//            return;
+//        }
         try{
             //Pravljenje novog acc
             String query = "INSERT INTO logintable(id,username,password)VALUES(?,?,?)";
@@ -294,7 +294,7 @@ public class EmpSingUp extends javax.swing.JFrame {
 //          NOVI NACIN JE PREKO METODE getPassword koja vraca charArray
             String pass = new String(txtCreatePassword.getPassword());
             pst.setString(3,pass);
-            
+
             JOptionPane.showMessageDialog(null, "You created your acc Sucessfully");
             pst.executeUpdate();
             
@@ -346,29 +346,29 @@ public class EmpSingUp extends javax.swing.JFrame {
     private javax.swing.JLabel txtUserErr;
     // End of variables declaration//GEN-END:variables
 
-    private boolean proveraAcc() {
-        try{
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javabazeapp", "root","");
-         
-        String sql = "SELECT * FROM logintable WHERE username = ? AND password = ?";
-         
-        PreparedStatement pst = con.prepareStatement(sql);
-        pst.setString(1, txtCreateUsername.getText());
-        pst.setString(2, txtCreatePassword.getText());
-        
-        ResultSet rs = pst.executeQuery();
-            if(rs.next()){
-                JOptionPane.showMessageDialog(null, "Account already exist");
-                txtCreateUsername.setText("");
-                txtCreatePassword.setText("");
-                return false;
-            }  
-
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        } 
-        return true;
-    }
+//    private boolean proveraAcc() {
+//        try{
+//        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javabazeapp", "root","");
+//         
+//        String sql = "SELECT * FROM logintable WHERE username = ? AND password = ?";
+//         
+//        PreparedStatement pst = con.prepareStatement(sql);
+//        pst.setString(1, txtCreateUsername.getText());
+//        pst.setString(2, txtCreatePassword.getText());
+//        
+//        ResultSet rs = pst.executeQuery();
+//            if(rs.next()){
+//                JOptionPane.showMessageDialog(null, "Account already exist");
+//                txtCreateUsername.setText("");
+//                txtCreatePassword.setText("");
+//                return false;
+//            }  
+//
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null,e);
+//        } 
+//        return true;
+//    }
 
     private boolean proveraUser() {
         try{

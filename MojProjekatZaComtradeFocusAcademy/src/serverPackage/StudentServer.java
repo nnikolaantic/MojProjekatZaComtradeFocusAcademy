@@ -9,6 +9,9 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
@@ -23,6 +26,8 @@ public class StudentServer extends javax.swing.JFrame {
     ServerSocket ss;
     //Pravimo HashMap u kojem cemo cuvati klijente koji se loguju preko clientRegistera
     HashMap clientHash = new HashMap();
+    
+    DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
     
     public StudentServer() {
         
@@ -52,7 +57,8 @@ public class StudentServer extends javax.swing.JFrame {
                         dout.writeUTF("You Are Alredy Registered....!!");
                     }else{
                         clientHash.put(username, s);
-                        msgBox.append(username + " Joined! \n");
+                        Date date = new Date();
+                        msgBox.append(username + " Joined! " + dateFormat.format(date) + " \n");
                         DataOutputStream dout = new DataOutputStream(s.getOutputStream());
                         dout.writeUTF("");
                         //-----------------------------------
@@ -97,7 +103,8 @@ public class StudentServer extends javax.swing.JFrame {
                     if(i.equals("mkoihgteazdcvgyhujb096785542AXTY")){//prepoznavanje za remove
                         clientHash.remove(username);
                         String msgForRemove = username + ":  removed! \n";
-                        msgBox.append(username + ": removed! \n");
+                        Date date = new Date();
+                        msgBox.append(username + ": removed! " + dateFormat.format(date) + " \n");
                         new PrepareClientList().start();
                         //kada smo smakli klijenta opet pokrecemo PrepareClientList()
                         //potom svim korisnicima saljemo novu listu klijenata bez uklonjenog korisnika

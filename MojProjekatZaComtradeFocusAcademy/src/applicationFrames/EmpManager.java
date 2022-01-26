@@ -264,6 +264,11 @@ public class EmpManager extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("Date");
 
+        searchdata.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchdataActionPerformed(evt);
+            }
+        });
         searchdata.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 searchdataKeyReleased(evt);
@@ -668,6 +673,10 @@ public class EmpManager extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,ex);
         }
     }//GEN-LAST:event_formWindowClosing
+
+    private void searchdataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchdataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchdataActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

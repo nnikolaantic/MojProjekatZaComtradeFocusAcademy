@@ -78,7 +78,12 @@ public class EmpCEOMenu extends javax.swing.JFrame {
                             if(!username.equals(u))
                                 dlm.addElement(u);
                         }
-                    }else{
+//                    }else{
+//                        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+//                        model.setRowCount(0);
+//                        show_zaposleni();
+//                    }
+                    }else if(m.contains("ChangeNotificatonFromServer")){
                         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
                         model.setRowCount(0);
                         show_zaposleni();
